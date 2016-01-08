@@ -26,10 +26,12 @@ EXPOSE 8082
 #ENV HEAPSTER_COMMIT=af4752e
 ## based on release Heapster v0.19.0 . might be effected by this issue https://github.com/kubernetes/heapster/pull/749
 #ENV HEAPSTER_COMMIT=7240063
-# commit with only riemann sink
-ENV HEAPSTER_COMMIT=063ce38
+# commit with only riemann sink and none of issus outlined 063ce38
+ENV HEAPSTER_COMMIT=c791088
+# commit where  go deps clean up was added that resulted in a bunch of auth issues 
+#ENV HEAPSTER_COMMIT=063ce38
 
-RUN yum install  -y -q go git wget make && \
+RUN yum install -y -q go git wget make && \
     yum clean all && \
     export GOPATH=/tmp/gopath && \
     export PATH=$PATH:$GOPATH/bin && \
