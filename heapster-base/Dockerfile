@@ -24,7 +24,8 @@ MAINTAINER Hawkular Metrics <hawkular-dev@lists.jboss.org>
 EXPOSE 8082
 
 #ENV HEAPSTER_COMMIT=af4752e
-ENV HEAPSTER_COMMIT=b299ba1
+## based on release Heapster v0.19.0 . might be effected by this issue https://github.com/kubernetes/heapster/pull/749
+ENV HEAPSTER_COMMIT=7240063
 
 RUN yum install -y -q go git wget make && \
     yum clean all && \
