@@ -22,12 +22,12 @@ FROM centos:centos7
 MAINTAINER Hawkular Metrics <hawkular-dev@lists.jboss.org>
 
 EXPOSE 8082
-
-#ENV HEAPSTER_COMMIT=af4752e
+# original commit
+ENV HEAPSTER_COMMIT=af4752e
 ## based on release Heapster v0.19.0 . might be effected by this issue https://github.com/kubernetes/heapster/pull/749
 #ENV HEAPSTER_COMMIT=7240063
 # commit with only riemann sink
-ENV HEAPSTER_COMMIT=063ce38
+#ENV HEAPSTER_COMMIT=063ce38
 
 RUN yum install -y -q go git wget make && \
     yum clean all && \
