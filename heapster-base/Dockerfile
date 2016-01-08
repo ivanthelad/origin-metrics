@@ -29,7 +29,7 @@ EXPOSE 8082
 # commit with only riemann sink
 ENV HEAPSTER_COMMIT=063ce38
 
-RUN yum install -y -q go git wget make && \
+RUN yum install  -y -q go git wget make && \
     yum clean all && \
     export GOPATH=/tmp/gopath && \
     export PATH=$PATH:$GOPATH/bin && \
